@@ -1,0 +1,7 @@
+#ifndef DENARIUS_BLOCKCHAIN_PACKAGE
+#define DENARIUS_BLOCKCHAIN_PACKAGE
+
+#include "block.h"
+#include "blockchain.h"
+
+#endif // !DENARIUS_BLOCKCHAIN_PACKAGE

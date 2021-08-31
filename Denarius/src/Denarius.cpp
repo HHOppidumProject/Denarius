@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "blockchain/blockchain"
 
 int main()
 {
