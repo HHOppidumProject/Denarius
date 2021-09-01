@@ -1,0 +1,9 @@
+﻿{
+  "name": "Denarius CryptoCurrency",
+  "version": "0.0.1",
+  "dependencies": [
+    "cryptopp",
+    "nlohmann-json"
+  ],
+  "description": "A cryptocurrency made to be used within the Roman Organisations to encourage communication and community between them.",
+}

@@ -2,7 +2,11 @@
 #define DENARIUS_BLOCKCHAIN
 
 #include <string>
+
 #include <nlohmann/json.hpp>
+#include <cryptopp/cryptlib.h>
+#include <cryptopp/rsa.h>
+#include <cryptopp/osrng.h>
 
 #include "block.h"
 
@@ -21,6 +25,13 @@ namespace denarius {
 		nlohmann::json chainJSONEncode();
 		blockchain chainJSONDencode(nlohmann::json chainJSON);
 		float getBalance(std::string person);
+
+	private:
+		std::vector<denarius::block> chain;
+		std::vector<denarius::transaction> pendingTransactions;
+		int difficulty;
+		int minerRewards;
+		int blockSize;
 	};
 }
 

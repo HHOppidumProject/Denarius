@@ -6,7 +6,10 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    denarius::transaction transaction("Foo", "Bar", 12);
+    denarius::blockchain Blockchain;
+    std::cout << Blockchain.generateKeys() << std::endl;
+    std::cout << transaction.hash << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
