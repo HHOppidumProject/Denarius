@@ -87,6 +87,7 @@
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <VcpkgInstalledDir>..\..\..\..\..\..\dev\vcpkg\installed</VcpkgInstalledDir>
     <VcpkgConfiguration>$(configuration)</VcpkgConfiguration>
+    <VcpkgUseStatic>true</VcpkgUseStatic>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <VcpkgInstalledDir>..\..\..\..\..\..\dev\vcpkg\installed</VcpkgInstalledDir>
@@ -99,6 +100,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,6 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,13 +156,17 @@
     <ClCompile Include="src\blockchain\block.cpp" />
     <ClCompile Include="src\blockchain\blockchain.cpp" />
     <ClCompile Include="src\blockchain\transaction.cpp" />
+    <ClCompile Include="src\denCrypto\crypto.cpp" />
+    <ClCompile Include="src\denCrypto\rsaKeyPair.cpp" />
     <ClCompile Include="src\Denarius.cpp" />
     <ClCompile Include="src\time\time.cpp" />
+    <ClCompile Include="src\user\user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="packages.config" />
     <None Include="src\blockchain\blockchain" />
+    <None Include="src\denCrypto\crypto" />
     <None Include="src\time\time" />
     <None Include="vcpkg.json" />
   </ItemGroup>
@@ -167,7 +174,10 @@
     <ClInclude Include="src\blockchain\block.h" />
     <ClInclude Include="src\blockchain\blockchain.h" />
     <ClInclude Include="src\blockchain\transaction.h" />
+    <ClInclude Include="src\denCrypto\crypto.h" />
+    <ClInclude Include="src\denCrypto\rsaKeyPair.h" />
     <ClInclude Include="src\time\time.h" />
+    <ClInclude Include="src\user\user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

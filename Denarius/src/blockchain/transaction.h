@@ -3,13 +3,16 @@
 
 #include <string>
 #include <ctime>
+
+#include <nlohmann/json.hpp>
 #include <cryptopp/cryptlib.h>
 #include <cryptopp/sha3.h>
 #include <cryptopp/hex.h>
 #include <cryptopp/filters.h>
 #include <cryptopp/files.h>
 
-#include "../time/time.h"
+#include "../time/time"
+#include "../denCrypto/rsaKeyPair.h"
 
 namespace denarius {
 	class transaction {
@@ -18,15 +21,20 @@ namespace denarius {
 
 		std::string calculateHash();
 		bool isValidTransaction();
-		bool signTransaction(std::string key, std::string senderKey);
-
+		bool signTransaction(dCrypto::RSAKeyPair key, dCrypto::RSAKeyPair senderKey);
+		nlohmann::json JSONEncode();
+		std::string getSender() { return sender; }
+		std::string getReceiver() { return receiver; }
+		long getAmt() { return amt; }
+		
 		std::string hash;
+
 	private:
+		std::string signature;
 		std::string sender;
 		std::string receiver;
 		long amt;
 		std::string currentTime;
-		std::string signature;
 	};
 }
 

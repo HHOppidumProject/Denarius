@@ -30,6 +30,15 @@
     <ClCompile Include="src\blockchain\blockchain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\denCrypto\rsaKeyPair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\denCrypto\crypto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -37,6 +46,7 @@
     <None Include="src\blockchain\blockchain" />
     <None Include="src\time\time" />
     <None Include="vcpkg.json" />
+    <None Include="src\denCrypto\crypto" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\blockchain\blockchain.h">
@@ -49,6 +59,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\time\time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\denCrypto\rsaKeyPair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\user\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\denCrypto\crypto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

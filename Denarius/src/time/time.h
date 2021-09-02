@@ -3,6 +3,8 @@
 
 #include <string>
 #include <ctime>
+#include <chrono>
+#include <iostream>
 
 namespace dtime {
 	std::string currentTime();

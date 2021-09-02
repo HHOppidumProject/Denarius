@@ -3,13 +3,30 @@
 
 #include <iostream>
 #include "blockchain/blockchain"
-
+#include "user/user.h"
 int main()
 {
     denarius::transaction transaction("Foo", "Bar", 12);
     denarius::blockchain Blockchain;
-    std::cout << Blockchain.generateKeys() << std::endl;
-    std::cout << transaction.hash << std::endl;
+    dCrypto::RSAKeyPair key = Blockchain.generateKeys();
+    denarius::user user1("apolo49", "foo", "foo@bar.com", "Joe", key);
+    //denarius::user user2("wavern64", "bar", "bar@bar.com", "Harrison", Blockchain.generateKeys());
+    std::cout << "\n\n\n\n";
+    Blockchain.pendingTransactions.push_back(transaction);
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.pendingTransactions.push_back(denarius::transaction("apolo49", "wavern64", 10));
+    Blockchain.minePendingTransactions("apolo49");
+    std::cout << Blockchain.chainJSONEncode().dump(4) << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

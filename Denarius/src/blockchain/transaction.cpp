@@ -38,11 +38,35 @@ bool transaction::isValidTransaction() {
 	return true;
 }
 
-bool transaction::signTransaction(std::string key, std::string senderKey) {
+bool transaction::signTransaction(dCrypto::RSAKeyPair key, dCrypto::RSAKeyPair senderKey) {
 	if (this->hash != this->calculateHash()) {
 		return false;
 	}
-	if (false) {
 
+	//Sign Transaction
+	CryptoPP::AutoSeededRandomPool rng;
+	CryptoPP::RSASSA_PKCS1v15_SHA_Signer signer(senderKey.getPrivateKey());
+	CryptoPP::StringSource ss1(this->hash, true, new CryptoPP::SignerFilter(rng, signer, new CryptoPP::StringSink(this->signature)));
+
+	//Verify Transaction
+	try {
+		CryptoPP::RSASSA_PKCS1v15_SHA_Verifier verifier(key.getPublicKey());
+		CryptoPP::StringSource ss2(this->hash + this->signature, true, new CryptoPP::SignatureVerificationFilter(verifier, NULL, CryptoPP::SignatureVerificationFilter::THROW_EXCEPTION));
 	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+		this->signature = "";
+		return false;
+	}
+	return true;
+}
+
+nlohmann::json transaction::JSONEncode() {
+	nlohmann::json json;
+	json["sender"] = this->sender;
+	json["receiver"] = this->receiver;
+	json["amount"] = this->amt;
+	json["time"] = this->currentTime;
+	json["hash"] = this->hash;
+	return json;
 }
