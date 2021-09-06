@@ -176,6 +176,7 @@
     <ClInclude Include="src\blockchain\transaction.h" />
     <ClInclude Include="src\denCrypto\crypto.h" />
     <ClInclude Include="src\denCrypto\rsaKeyPair.h" />
+    <ClInclude Include="src\threading\threading.h" />
     <ClInclude Include="src\time\time.h" />
     <ClInclude Include="src\user\user.h" />
   </ItemGroup>

@@ -12,9 +12,7 @@ transaction::transaction(std::string sender, std::string receiver, long amt) {
 
 std::string transaction::calculateHash() {
 	CryptoPP::SHA3_512 hash;
-	std::string hashstring;
-	std::string digest;
-	std::string result;
+	std::string hashstring, result, digest;
 	CryptoPP::HexEncoder encoder(new CryptoPP::StringSink(result));
 
 	hashstring = this->sender + this->receiver + std::to_string(this->amt) + this->currentTime;

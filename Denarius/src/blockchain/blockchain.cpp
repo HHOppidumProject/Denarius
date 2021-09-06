@@ -69,6 +69,7 @@ bool denarius::blockchain::minePendingTransactions(std::string miner) {
 			newBlock.mineBlock(this->difficulty);
 			this->chain.push_back(newBlock);
 		}
+		this->pendingTransactions.clear();
 		this->pendingTransactions.push_back(denarius::transaction("Miner Rewards", miner, this->minerRewards));
 	}
 	return true;
@@ -84,9 +85,9 @@ denarius::block denarius::blockchain::getLastBlock()
 }
 
 denarius::block denarius::blockchain::addGenesisBlock() {
-	std::vector<denarius::transaction> t = { denarius::transaction("foo", "bar", 10) };
+	std::vector<denarius::transaction> t = { denarius::transaction("The Nova Roman Treasury", "The Nova Roman Treasury", 1000000) };
 	denarius::block genesis(t, dtime::currentTime(), 0);
-	genesis.setPrev("None");
+	genesis.setPrev("N/A");
 	return genesis;
 }
 

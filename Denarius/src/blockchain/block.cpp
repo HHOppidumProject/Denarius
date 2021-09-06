@@ -24,10 +24,11 @@ std::string block::calculateHash() {
 	}
 
 	std::string hashString = this->time + hashTransactions + this->gym + this->prev + std::to_string(this->nonce);
-	std::string re = dCrypto::SHA3512HashString(hashString);
-	std::cout << re << std::endl;
-
-	return re;
+	for (int i = 0; i < 15; i++) {
+		std::string re = dCrypto::SHA3512HashString(hashString);
+		hashString = re;
+	}
+	return hashString;
 }
 
 bool block::mineBlock(int difficulty) {

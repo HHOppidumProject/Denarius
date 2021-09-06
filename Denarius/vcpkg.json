@@ -4,7 +4,9 @@
   "dependencies": [
     "cryptopp",
     "nlohmann-json",
-    "python3"
+    "python3",
+    "boost-asio",
+    "boost-beast"
   ],
   "description": "A cryptocurrency made to be used within the Roman Organisations to encourage communication and community between them.",
 }
