@@ -1,0 +1,17 @@
+{
+  "name": "denarius-blockchain-host",
+  "version": "0.0.0",
+  "description": "DenariusBlockchainHost",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "electron": "^14.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.2.0",
+    "socket.io-client": "^4.2.0",
+    "uuid": "^8.3.2",
+    "ws": "^8.2.1"
+  }
+}
