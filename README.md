@@ -7,4 +7,5 @@ The Denarius will operate on a proof of work algorithm and will use a proprietar
 
 ---
 Programmed by Q. Aelius Volusus
+
 No credit goes to the aforementioned companies/organisations. This currency was programmed for them, however they have not contributed a penny nor a line of code. All code was written by Q. Aelius Volusus.
