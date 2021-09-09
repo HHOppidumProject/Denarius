@@ -36,8 +36,8 @@
 
     <div id="content" class="content">
         <div style="width:100%; max-height:5%; padding-bottom:1vh;">
-            <img src="/images/Denarius.png" alt="Denarius Logo" style="max-width:6rem;min-width:4rem;vertical-align:middle"/>
-            <h1 style="display: inline-block;vertical-align:middle;font-family:Trajan;font-weight:3000;font-size:4rem">Denarius</h1>
+            <img src="/images/Denarius.png" alt="Denarius Logo" style="max-width:6rem;min-width:min(4rem, 10vw);vertical-align:middle"/>
+            <h1 style="display: inline-block;vertical-align:middle;font-family:Trajan;font-weight:3000;font-size:min(4rem, 10vw)">Denarius</h1>
         </div>
         <!-- <p><%= blockchain %></p> -->
     </div>
@@ -51,8 +51,8 @@
             
         function openNav() {
             if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
-                document.getElementById("sidebar").style.width = "10%";
-                document.getElementById("content").style.marginLeft = "10%";
+                document.getElementById("sidebar").style.width = "12em";
+                document.getElementById("content").style.marginLeft = "12em";
                 document.getElementById("closebtn").style.visibility = "visible";
                 document.getElementById("openbtn").style.visibility = "hidden";
                 document.getElementById("openbtn").style.padding = "0";
@@ -63,12 +63,12 @@
                 document.getElementById("account").innerHTML = '<i class="fas fa-user"></i> Account';
                 document.getElementById("settings").innerHTML = '<i class="fas fa-cog"></i> Settings';
                 document.getElementById("closebtn").style.padding = "0.8vw";
-                document.getElementById("closebtn").style.height = "1vh";
+                document.getElementById("closebtn").style.paddingBottom = "2em";
             } else {
                 document.getElementById("sidebar").style.height = "100%";
                 document.getElementById("content").style.marginTop = "0";
                 document.getElementById("openbtn").className = "invisiblebtn";
-                document.getElementById("closebtn").className = "visiblebtn";
+                document.getElementById("closebtn").className = "closebtn, visiblebtn";
                 document.getElementById("home").className = "visiblebtn";
                 document.getElementById("blockchain").className = "visiblebtn";
                 document.getElementById("about").className = "visiblebtn";
@@ -84,8 +84,8 @@
 
         function closeNav() {
             if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
-                document.getElementById("sidebar").style.width = "2.5%";
-                document.getElementById("content").style.marginLeft= "2.5%";
+                document.getElementById("sidebar").style.width = "3em";
+                document.getElementById("content").style.marginLeft= "3em";
                 document.getElementById("closebtn").style.visibility = "hidden";
                 document.getElementById("closebtn").style.padding = "0";
                 document.getElementById("closebtn").style.height = "0";
@@ -99,12 +99,12 @@
                 document.getElementById("account").innerHTML = '<i class="fas fa-user"></i>';
                 document.getElementById("settings").innerHTML = '<i class="fas fa-cog"></i>';
                 document.getElementById("openbtn").style.padding = "0.8vw";
-                document.getElementById("openbtn").style.height = "1vh";
+                document.getElementById("openbtn").style.paddingBottom = "2em";
             } else {
                 document.getElementById("sidebar").style.height = "2.5%";
                 document.getElementById("content").style.marginTop = "5%";
                 document.getElementById("openbtn").className = "openbtn";
-                document.getElementById("closebtn").className = "invisiblebtn";
+                document.getElementById("closebtn").className = "invisiblebtn, closebtn";
                 document.getElementById("home").className = "invisiblebtn";
                 document.getElementById("blockchain").className = "invisiblebtn";
                 document.getElementById("about").className = "invisiblebtn";
