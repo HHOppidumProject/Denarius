@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  </head>
+  <body>
+    <div id="sidebar" class="sidebar">
+        <a id="openbtn" href="javascript:void(0)" style="transition: none;" class="openbtn" onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a id="closebtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fas fa-times"></i>
+        </a>
+        <a id="home" class="active" href="/">
+            <i class="fas fa-home"></i>
+        </a>
+        <a id="blockchain" href="blockchain">
+            <i class="fas fa-cubes"></i>
+        </a>
+        <a id="about" href="about">
+            <i class="far fa-question-circle"></i>
+        </a>
+        <div class="bottom">
+            <a id="account" href="account">
+                <i class="fas fa-user"></i>
+            </a>
+            <a id="settings" href="settings">
+                <i class="fas fa-cog"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="content" class="content">
+        <div style="width:100%; max-height:5%; padding-bottom:1vh;">
+            <img src="/images/Denarius.png" alt="Denarius Logo" style="max-width:6rem;min-width:4rem;vertical-align:middle"/>
+            <h1 style="display: inline-block;vertical-align:middle;font-family:Trajan;font-weight:3000;font-size:4rem">Denarius</h1>
+        </div>
+        <!-- <p><%= blockchain %></p> -->
+    </div>
+
+    <script>
+        window.addEventListener('resize', onResize);
+
+        function onResize(){
+            window.location.reload(); 
+        }
+            
+        function openNav() {
+            if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
+                document.getElementById("sidebar").style.width = "10%";
+                document.getElementById("content").style.marginLeft = "10%";
+                document.getElementById("closebtn").style.visibility = "visible";
+                document.getElementById("openbtn").style.visibility = "hidden";
+                document.getElementById("openbtn").style.padding = "0";
+                document.getElementById("openbtn").style.height = "0";
+                document.getElementById("home").innerHTML = '<i class="fas fa-home"></i> Home';
+                document.getElementById("blockchain").innerHTML = '<i class="fas fa-cubes"></i> Blockchain';
+                document.getElementById("about").innerHTML = '<i class="far fa-question-circle"></i> About';
+                document.getElementById("account").innerHTML = '<i class="fas fa-user"></i> Account';
+                document.getElementById("settings").innerHTML = '<i class="fas fa-cog"></i> Settings';
+                document.getElementById("closebtn").style.padding = "0.8vw";
+                document.getElementById("closebtn").style.height = "1vh";
+            } else {
+                document.getElementById("sidebar").style.height = "100%";
+                document.getElementById("content").style.marginTop = "0";
+                document.getElementById("openbtn").className = "invisiblebtn";
+                document.getElementById("closebtn").className = "visiblebtn";
+                document.getElementById("home").className = "visiblebtn";
+                document.getElementById("blockchain").className = "visiblebtn";
+                document.getElementById("about").className = "visiblebtn";
+                document.getElementById("account").className = "visiblebtn";
+                document.getElementById("settings").className = "visiblebtn";
+                document.getElementById("home").innerHTML = '<i class="fas fa-home"></i> Home';
+                document.getElementById("blockchain").innerHTML = '<i class="fas fa-cubes"></i> Blockchain';
+                document.getElementById("about").innerHTML = '<i class="far fa-question-circle"></i> About';
+                document.getElementById("account").innerHTML = '<i class="fas fa-user"></i> Account';
+                document.getElementById("settings").innerHTML = '<i class="fas fa-cog"></i> Settings';
+            }
+        }
+
+        function closeNav() {
+            if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
+                document.getElementById("sidebar").style.width = "2.5%";
+                document.getElementById("content").style.marginLeft= "2.5%";
+                document.getElementById("closebtn").style.visibility = "hidden";
+                document.getElementById("closebtn").style.padding = "0";
+                document.getElementById("closebtn").style.height = "0";
+                document.getElementById("openbtn").style.visibility = "visible";
+                document.getElementById("home").textContent = '';
+                document.getElementById("blockchain").textContent = '';
+                document.getElementById("about").textContent = '';
+                document.getElementById("home").innerHTML = '<i class="fas fa-home"></i>';
+                document.getElementById("blockchain").innerHTML = '<i class="fas fa-cubes"></i>';
+                document.getElementById("about").innerHTML = '<i class="far fa-question-circle"></i>';
+                document.getElementById("account").innerHTML = '<i class="fas fa-user"></i>';
+                document.getElementById("settings").innerHTML = '<i class="fas fa-cog"></i>';
+                document.getElementById("openbtn").style.padding = "0.8vw";
+                document.getElementById("openbtn").style.height = "1vh";
+            } else {
+                document.getElementById("sidebar").style.height = "2.5%";
+                document.getElementById("content").style.marginTop = "5%";
+                document.getElementById("openbtn").className = "openbtn";
+                document.getElementById("closebtn").className = "invisiblebtn";
+                document.getElementById("home").className = "invisiblebtn";
+                document.getElementById("blockchain").className = "invisiblebtn";
+                document.getElementById("about").className = "invisiblebtn";
+                document.getElementById("account").className = "invisiblebtn";
+                document.getElementById("settings").className = "invisiblebtn";
+            }
+
+
+        }
+    </script>
+  </body>
+</html>
