@@ -18,8 +18,60 @@
     <ClCompile Include="src\Denarius.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\blockchain\block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\blockchain\transaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\time\time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\blockchain\blockchain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\denCrypto\rsaKeyPair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\user\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\denCrypto\crypto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="packages.config" />
+    <None Include="src\blockchain\blockchain" />
+    <None Include="src\time\time" />
+    <None Include="vcpkg.json" />
+    <None Include="src\denCrypto\crypto" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\blockchain\blockchain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\blockchain\block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\blockchain\transaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\time\time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\denCrypto\rsaKeyPair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\user\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\denCrypto\crypto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threading\threading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

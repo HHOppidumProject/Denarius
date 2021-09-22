@@ -1,0 +1,6 @@
+#ifndef DENARIUS_TIME_PACKAGE
+#define DENARIUS_TIME_PACKAGE
+
+#include "time.h"
+
+#endif // !DENARIUS_TIME_PACKAGE
