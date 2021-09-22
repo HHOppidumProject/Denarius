@@ -3,7 +3,7 @@ ScriptName=$0
 Help(){
 	printf 'Script for installing tools to help with development of the Hellenic Hospitality Oppidum currency, the Solidus.\n\n'
 	
-	printf 'Syntax: '$ScriptName' [-h|-VSC|-VS|-vcpkg|-njs|-f]\n'
+	printf 'Syntax: '$ScriptName' [-h|-VSC|-VS|-vcpkg|-vcpkgPath|-njs|-f]\n'
 	printf "options:\n"
 	printf '\th\t\tPrints this help function\n\t\tAlias\t-? | --help\n'
 	printf '\tVSC\t\tInstalls Visual Studio Code [y/n] (cannot be used with -VS)\n\t\tAlias\t--VSCode | --Visual-Studio-Code\n'
@@ -147,12 +147,6 @@ while [[ $# -gt 0 ]]; do
 			exit;;
 	esac
 done
-
-echo "VSCode = ${VSCode}"
-echo "VSCommunity = ${VSCommunity}"
-echo "vcpkg = ${vcpkg}"
-echo "njs = ${njs}"
-echo "force = ${force}"
 
 if [[ "$force" == false ]]; then
 	if [[ "$VSCode" == true ]] && [[ "$VSCommunity" == true ]]; then
