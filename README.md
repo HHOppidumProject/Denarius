@@ -27,6 +27,13 @@ In text there would be:
 * 5 Folles in a Sestertii
 * 9 Nummi in a Folles
 
+Each of these have been chosen for good reason:
+* The Solidus was chosen due to being the primary coin of the Byzantine Empire and was chosen by popular vote over the Denarius
+* The Denarius was chosen due to being the primary coin of the Roman Republic for many years and lends its name to the word for money in many languages
+* The Sestertius was chosen as it was the coin that was the subdivision for denarii
+* The Follis was chosen due to it being a popular coin in both the Roman Empire and the Byzantine Empire. In addition to this it makes up the largest category of coin finds in the province of Britannia
+* The Nummus was chosen as it was the lowest value coin in the Byzantine Empire.
+
 ---
 Organisations
 ---
