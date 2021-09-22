@@ -21,22 +21,6 @@ My proposed currency would work as follows
 | Follis     | 1/280  | 1/20    | 1/5       | 1      | 9     |
 | Nummus     | 1/2520 | 1/180   | 1/45      | 1/9    | 1     |
 
----
-Proposed Subdivisioning
----
-
-I propose that the solidus should have several subdivisions, allowing for division by 2, 3, 4, 5, 6, 7, 8, 9. this means the lowest subdivision will be at a ratio of `1/2520`
-
-My proposed currency would work as follows
-
-|            | Solidi | Denarii | Sestertii | Folles | Nummi |
-|------------|--------|---------|-----------|--------|-------|
-| Solidus    | 1      | 14      | 56        | 280    | 2520  |
-| Denarius   | 1/14   | 1       | 4         | 20     | 180   |
-| Sestertius | 1/56   | 1/4     | 1         | 5      | 45    |
-| Follis     | 1/280  | 1/20    | 1/5       | 1      | 9     |
-| Nummus     | 1/2520 | 1/180   | 1/45      | 1/9    | 1     |
-
 In text there would be:
 * 14 Denarii in a Solidus
 * 4 Sestertii in a Denarius
