@@ -34,6 +34,8 @@ Each of these have been chosen for good reason:
 * The Follis was chosen due to it being a popular coin in both the Roman Empire and the Byzantine Empire. In addition to this it makes up the largest category of coin finds in the province of Britannia
 * The Nummus was chosen as it was the lowest value coin in the Byzantine Empire.
 
+For this reason I propose that 1 nummus be worth £0.005 ($0.0068) which would make 1 solidus worth £12.60 ($17.136).
+
 ---
 Organisations
 ---
