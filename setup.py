@@ -1,6 +1,13 @@
+import sys
+
+if (sys.version_info[0]  < 3) and (sys.version[1] < 8):
+    print("#"*25)
+    print("Need python version greater than 3.7")
+    print("#"*25)
+
 try:
     import subprocess, os, winreg
-    import itertools, os, sys, urllib3
+    import itertools, urllib3
 except ImportError as e:
     subprocess.run(["pip", "install", "urllib3"])
     print("If this error was caused by urllib3, it has now been handled, and you can ignore this message")
