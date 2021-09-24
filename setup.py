@@ -10,6 +10,15 @@ except ImportError as e:
     print(e)
     print("#"*25)
 
+except ModuleNotFoundError as e:
+    subprocess.run(["pip", "install", "urllib3"])
+    print("If this error was caused by urllib3, it has now been handled, and you can ignore this message")
+    print("Report the following to Q. Aelius Volusus:")
+    print("#"*25)
+    print("IMPORT ERROR HAS BEEN CAUGHT")
+    print(e)
+    print("#"*25)
+
 def Help():
     print(f"""
 Script for installing tools to help with development of the Hellenic Hospitality Oppidum currency, the solidus.
