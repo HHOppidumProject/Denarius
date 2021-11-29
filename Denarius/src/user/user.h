@@ -18,7 +18,9 @@ namespace denarius {
 
 	private:
 		std::string hashPassword(std::string password);
-		std::string username, password, email, name;
+		void generateAddress();
+
+		std::string username, passwordHash, email, name, citizenID, address;
 		dCrypto::RSAKeyPair key;
 	};
 }

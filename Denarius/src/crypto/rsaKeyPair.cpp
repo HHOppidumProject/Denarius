@@ -44,17 +44,28 @@ void dCrypto::RSAKeyPair::saveKeys()
 }
 
 void dCrypto::RSAKeyPair::loadKeys() {
-	CryptoPP::FileSource fspub(pubKeyPath.c_str(), true);
-	CryptoPP::FileSource fspriv(privKeyPath.c_str(), true);
 	try {
-		PEM_Load(fspub, this->publicKey);
-		PEM_Load(fspriv, this->privateKey);
+		loadKey(this->privKeyPath, true);
+		loadKey(this->pubKeyPath);
+		
 	}
 	catch (CryptoPP::FileStore::OpenErr& e) {
 		std::cout << strerror(errno) << "\n";
 		std::cout << e.what() << std::endl;
 		exit(-1);
 	}
+}
+
+void dCrypto::RSAKeyPair::loadKey(std::string keyDest, bool isPrivKey)
+{
+	CryptoPP::FileSource keyFile(keyDest.c_str(), true);
+	if (isPrivKey) {
+		PEM_Load(keyFile, this->privateKey);
+	}
+	else {
+		PEM_Load(keyFile, this->publicKey);
+	}
+
 }
 
 CryptoPP::RSA::PrivateKey dCrypto::RSAKeyPair::getPrivateKey() {

@@ -19,6 +19,7 @@ namespace dCrypto {
 		CryptoPP::RSA::PublicKey getPublicKey();
 
 		void loadKeys();
+		void loadKey(std::string keyDest, bool isPrivKey = false);
 
 		static const std::string pubKeyPath;
 		static const std::string privKeyPath;
