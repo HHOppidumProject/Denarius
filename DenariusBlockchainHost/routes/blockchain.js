@@ -8,7 +8,7 @@ var app = express();
 function GET(req, res, next) {
 
     var Blockchain = '';
-    const sock = new ws.WebSocket('ws://localhost:3001');
+    const sock = new ws.WebSocket('ws://localhost:3002');
 
     sock.on('error', function error(err) {
         console.log(err);
