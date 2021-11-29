@@ -3,11 +3,12 @@
 
 #include <string>
 #include <regex>
+#include <iostream>
 #include <cryptopp/hex.h>
 #include <cryptopp/cryptlib.h>
 #include <cryptopp/sha3.h>
 
-#include "../denCrypto/rsaKeyPair.h"
+#include "../crypto/crypto"
 
 namespace denarius {
 	class user {

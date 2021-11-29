@@ -30,13 +30,34 @@
     <ClCompile Include="src\blockchain\blockchain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\denCrypto\rsaKeyPair.cpp">
+    <ClCompile Include="src\crypto\rsaKeyPair.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\user\user.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\denCrypto\crypto.cpp">
+    <ClCompile Include="src\crypto\crypto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\network">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\network.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\asyncSession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\asyncListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\clientAsyncSession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\blockchain\node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -46,7 +67,7 @@
     <None Include="src\blockchain\blockchain" />
     <None Include="src\time\time" />
     <None Include="vcpkg.json" />
-    <None Include="src\denCrypto\crypto" />
+    <None Include="src\crypto\crypto" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\blockchain\blockchain.h">
@@ -61,16 +82,34 @@
     <ClInclude Include="src\time\time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\denCrypto\rsaKeyPair.h">
+    <ClInclude Include="src\crypto\rsaKeyPair.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\user\user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\denCrypto\crypto.h">
+    <ClInclude Include="src\crypto\crypto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\threading\threading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\network.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\parse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\asyncSession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\asyncListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\clientAsyncSession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\blockchain\node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

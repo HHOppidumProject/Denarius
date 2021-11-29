@@ -1,0 +1,10 @@
+#ifndef DENARIUS_NETWORK_PACKAGE
+#define DENARIUS_NETWORK_PACKAGE
+
+#include "network.hpp"
+#include "parse.h"
+#include "asyncSession.h"
+#include "asyncListener.h"
+#include "clientAsyncSession.h"
+
+#endif // !DENARIUS_NETWORK_PACKAGE

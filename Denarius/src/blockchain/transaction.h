@@ -12,12 +12,13 @@
 #include <cryptopp/files.h>
 
 #include "../time/time"
-#include "../denCrypto/rsaKeyPair.h"
+#include "../crypto/crypto"
 
 namespace denarius {
 	class transaction {
 	public:
 		transaction(std::string sender, std::string receiver, long amt);
+		transaction(std::string sender, std::string receiver, long amt, std::string time, std::string hash, std::string signature);
 
 		std::string calculateHash();
 		bool isValidTransaction();

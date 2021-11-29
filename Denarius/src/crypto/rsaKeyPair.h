@@ -4,15 +4,24 @@
 #include <cryptopp/cryptlib.h>
 #include <cryptopp/rsa.h>
 #include <cryptopp/osrng.h>
+#include <cryptopp/files.h>
+#include <cryptopp/pem.h>
+
 
 namespace dCrypto {
 	class RSAKeyPair{
 	public:
-		RSAKeyPair();
+		RSAKeyPair(bool loadKey = false);
 		RSAKeyPair(CryptoPP::RSA::PrivateKey privateKey, CryptoPP::RSA::PublicKey publicKey);
 		void generateKeys(int size);
+		void saveKeys();
 		CryptoPP::RSA::PrivateKey getPrivateKey();
 		CryptoPP::RSA::PublicKey getPublicKey();
+
+		void loadKeys();
+
+		static const std::string pubKeyPath;
+		static const std::string privKeyPath;
 
 	private:
 		CryptoPP::RSA::PrivateKey privateKey;

@@ -6,8 +6,8 @@
 #include <memory>
 
 #include "blockchain/blockchain"
+#include "network/asyncListener.h"
 #include "user/user.h"
-#include "threading/threading.h"
 
 int main()
 {
@@ -18,12 +18,16 @@ int main()
     boost::asio::io_context ioc{ 3 };
     auto const address = boost::asio::ip::make_address("127.0.0.1");
 
-    std::make_shared<denarius::networking::async_listener>(
+    std::make_shared<denarius::network::async_listener>(
         ioc,
         boost::asio::ip::tcp::endpoint{
             address,
+#ifdef D_PORT
+            static_cast<unsigned short>(D_PORT) },
+#else
             static_cast<unsigned short>(3001) },
-            Blockchain)->run();
+#endif
+        Blockchain)->run();
     
     std::vector<std::thread> v;
     v.reserve(3 - 1);
@@ -35,6 +39,5 @@ int main()
                 ioc.run();
             });
     ioc.run();
-
 
 }

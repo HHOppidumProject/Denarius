@@ -1,12 +1,14 @@
-﻿{
-  "name": "Denarius CryptoCurrency",
-  "version": "0.0.1",
-  "dependencies": [
-    "cryptopp",
-    "nlohmann-json",
-    "python3",
-    "boost-asio",
-    "boost-beast"
-  ],
-  "description": "A cryptocurrency made to be used within the Roman Organisations to encourage communication and community between them.",
+{
+	"name": "denarius-cryptocurrency",
+	"version": "0.0.1",
+	"dependencies": [
+		{
+			"name": "cryptopp",
+			"features": [ "pem-pack" ]
+		},
+		"nlohmann-json",
+		"boost-asio",
+		"boost-beast"
+	],
+	"description": "A cryptocurrency made to be used within the Roman Organisations to encourage communication and community between them."
 }

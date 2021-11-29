@@ -30,13 +30,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -83,14 +83,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Label="Vcpkg" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+    <VcpkgManifestInstall>true</VcpkgManifestInstall>
+    <VcpkgAutoLink>true</VcpkgAutoLink>
+  </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <VcpkgInstalledDir>..\..\..\..\..\..\dev\vcpkg\installed</VcpkgInstalledDir>
     <VcpkgConfiguration>$(configuration)</VcpkgConfiguration>
     <VcpkgUseStatic>true</VcpkgUseStatic>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <VcpkgInstalledDir>..\..\..\..\..\..\dev\vcpkg\installed</VcpkgInstalledDir>
     <VcpkgUseStatic>true</VcpkgUseStatic>
     <VcpkgConfiguration>$(configuration)</VcpkgConfiguration>
   </PropertyGroup>
@@ -98,9 +101,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>D_PORT=3002;_WIN32_WINNT=0x0601;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,15 +119,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>D_PORT=3001;_WIN32_WINNT=0x0601;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -155,10 +164,17 @@
   <ItemGroup>
     <ClCompile Include="src\blockchain\block.cpp" />
     <ClCompile Include="src\blockchain\blockchain.cpp" />
+    <ClCompile Include="src\blockchain\node.cpp" />
     <ClCompile Include="src\blockchain\transaction.cpp" />
-    <ClCompile Include="src\denCrypto\crypto.cpp" />
-    <ClCompile Include="src\denCrypto\rsaKeyPair.cpp" />
+    <ClCompile Include="src\crypto\crypto.cpp" />
+    <ClCompile Include="src\crypto\rsaKeyPair.cpp" />
     <ClCompile Include="src\Denarius.cpp" />
+    <ClCompile Include="src\network\asyncListener.cpp" />
+    <ClCompile Include="src\network\asyncSession.cpp" />
+    <ClCompile Include="src\network\clientAsyncSession.cpp" />
+    <ClCompile Include="src\network\network" />
+    <ClCompile Include="src\network\network.cpp" />
+    <ClCompile Include="src\network\parse.cpp" />
     <ClCompile Include="src\time\time.cpp" />
     <ClCompile Include="src\user\user.cpp" />
   </ItemGroup>
@@ -166,16 +182,22 @@
     <None Include=".gitignore" />
     <None Include="packages.config" />
     <None Include="src\blockchain\blockchain" />
-    <None Include="src\denCrypto\crypto" />
+    <None Include="src\crypto\crypto" />
     <None Include="src\time\time" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\blockchain\block.h" />
     <ClInclude Include="src\blockchain\blockchain.h" />
+    <ClInclude Include="src\blockchain\node.h" />
     <ClInclude Include="src\blockchain\transaction.h" />
-    <ClInclude Include="src\denCrypto\crypto.h" />
-    <ClInclude Include="src\denCrypto\rsaKeyPair.h" />
+    <ClInclude Include="src\crypto\crypto.h" />
+    <ClInclude Include="src\crypto\rsaKeyPair.h" />
+    <ClInclude Include="src\network\asyncListener.h" />
+    <ClInclude Include="src\network\asyncSession.h" />
+    <ClInclude Include="src\network\clientAsyncSession.h" />
+    <ClInclude Include="src\network\network.hpp" />
+    <ClInclude Include="src\network\parse.h" />
     <ClInclude Include="src\threading\threading.h" />
     <ClInclude Include="src\time\time.h" />
     <ClInclude Include="src\user\user.h" />

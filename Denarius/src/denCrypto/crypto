@@ -1,7 +1,0 @@
-#ifndef DENARIUS_DCRYPTO_PACKAGE
-#define DENARIUS_DCRYPTO_PACKAGE
-
-#import "rsaKeyPair.h"
-#import "crypto.h"
-
-#endif

@@ -9,27 +9,29 @@
 
 #include "transaction.h"
 
-#include "../denCrypto/crypto.h"
+#include "../crypto/crypto"
 
 namespace denarius {
 	class block {
 	public:
 		block(std::vector<denarius::transaction> transactions, std::string time, unsigned long index);
-		std::string calculateGym();
+		block(std::vector<denarius::transaction> transactions, std::string time, unsigned long index, std::string prev);
+		block(std::vector<denarius::transaction> transactions, std::string time, unsigned long index, std::string prev, std::string hash, int nonce, std::string exchange);
+		std::string calculateExchange();
 		std::string calculateHash();
 		bool mineBlock(int difficulty);
 		bool hasValidTransactions();
 		nlohmann::json JSONEncode();
 
 		std::string gethash() { return this->hash; }
-		bool setPrev(std::string hash);
+		std::string getPrev();
 	private:
 		unsigned long index;
 		std::vector<denarius::transaction> transactions;
 		std::string time;
 		std::string prev;
 		int nonce;
-		std::string gym;
+		std::string exchange;
 		std::string hash;
 	};
 }

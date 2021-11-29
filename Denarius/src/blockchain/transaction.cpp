@@ -10,6 +10,15 @@ transaction::transaction(std::string sender, std::string receiver, long amt) {
 	this->hash = this->calculateHash();
 }
 
+transaction::transaction(std::string sender, std::string receiver, long amt, std::string time, std::string hash, std::string signature) {
+	this->sender = sender;
+	this->receiver = receiver;
+	this->amt = amt;
+	this->currentTime = time;
+	this->hash = hash;
+	this->signature = signature;
+}
+
 std::string transaction::calculateHash() {
 	CryptoPP::SHA3_512 hash;
 	std::string hashstring, result, digest;
@@ -66,5 +75,6 @@ nlohmann::json transaction::JSONEncode() {
 	json["amount"] = this->amt;
 	json["time"] = this->currentTime;
 	json["hash"] = this->hash;
+	json["signature"] = this->signature;
 	return json;
 }

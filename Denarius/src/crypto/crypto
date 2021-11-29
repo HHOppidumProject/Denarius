@@ -1,0 +1,7 @@
+#ifndef DENARIUS_DCRYPTO_PACKAGE
+#define DENARIUS_DCRYPTO_PACKAGE
+
+#include "rsaKeyPair.h"
+#include "crypto.h"
+
+#endif // !DENARIUS_DCRYPTO_PACKAGE
