@@ -1,16 +1,12 @@
-const { execFile } = require('child_process');
+const { spawn } = require('child_process');
 const { workerData, parentPort } = require('worker_threads')
 
-    const blockchain = execFile('../Debug/Denarius.exe', [''], (error, stdout, stderr) => {
-        if (error) {
-            throw error;
-        }
-    });
+const blockchain = spawn('../Debug/Denarius.exe', [''])
 
-    blockchain.stdout.on("data", (data) => {
-        parentPort.postMessage(`Blockchain stdout: ${data}`);
-    });
+blockchain.stdout.on("data", (data) => {
+    parentPort.postMessage(`Blockchain stdout: ${data}`);
+});
 
-    blockchain.stderr.on("err", (data) => {
-        parentPort.postMessage(`blockchain stderr: ${data}`);
-    });
+blockchain.stderr.on("err", (data) => {
+    parentPort.postMessage(`blockchain stderr: ${data}`);
+});

@@ -3,6 +3,58 @@
     src: url(/fonts/TrajanProRegular.ttf);
 }
 
+body {
+    font-family: Trajan;
+    min-height: 100%;
+    background: #fffcf0;
+}
+
+.title {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 3000;
+    font-size: min(4rem, 10vw)
+}
+
+.logo {
+    max-width: 6rem;
+    min-width: min(4rem, 10vw);
+    vertical-align: middle;
+}
+
+.select2-selection {
+    overflow: hidden;
+    background-color: #66023c !important;
+    color: #d19b2f !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #66023c;
+    color: #d19b2f !important;
+}
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #d19b2f !important;
+    }
+
+.select2-search--dropdown {
+    background-color: #66023c;
+    border-color: #d19b2f;
+    color: #d19b2f;
+}
+
+.select2-search__field {
+    background-color: #66023c;
+    border-color: #d19b2f !important;
+    color: #d19b2f;
+}
+
+.select2-results {
+    background-color: #66023c;
+    border-color: #d19b2f;
+    color: #d19b2f;
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -61,7 +113,7 @@
 div.content {
     margin-left: 3em;
     padding: 1px 16px;
-    height: 100%;
+    min-height: 100%;
     transition: margin-left .5s;
 }
 
@@ -189,4 +241,23 @@ div.content {
 
 body {
     margin: 0;
+}
+
+
+/*CUSTOM SCROLL BAR*/
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.125rem grey;
+    border-radius: 0.25rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d19b2f;
+    border-radius: 0.25rem;
 }

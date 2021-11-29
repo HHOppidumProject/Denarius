@@ -1,0 +1,13 @@
+<% layout('./templates/main.template.eta') %>
+
+<div id="content">
+	<h1>
+		<%= it.message %>
+	</h1>
+	<h2>
+		<%= it.error.status %>
+	</h2>
+	<pre>
+		<%= it.error.stack %>
+	</pre>
+</div>

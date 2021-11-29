@@ -1,0 +1,5 @@
+<% layout('./templates/main.template.eta') %>
+
+<p id="blockchain-getter" style="visibility: hidden; height: 0px; width: 0px;"><% ~JSON.stringify(it.blockchain) %></p>
+
+<script type="text/javascript" src="/javascripts/blockchain.js"></script>

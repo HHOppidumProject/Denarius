@@ -1,0 +1,158 @@
+<% layout('./templates/main.template.eta') %>
+
+<div id="content" style="text-align:center;">
+    <p>This is the website and official, original exchange for the currency Solidus as used by the Imperium Romanum organisation.</p>
+    <p>The Solidus is equivalent (at all times) to $17.136 USD. The Solidus can be subdivided into many sub-currencies such as the Denarius which is valued at $1.224 USD.</p>
+    <select class="select2-dropdown" id="select2Currency" style="width: 100%; height:2rem"></select>
+</div>
+<div id="Container" class="flex-container">
+    <div class="grid">
+        <div id="chart_div" style="display: block; margin: 0; padding: 0;"></div>
+    </div>
+    <div class="grid">
+        <table id="Table" class="table tg">
+            <thead>
+                <tr>
+                    <th class="table-top-row" />
+                    <th class="table-top-row">
+                        Solidi
+                    </th>
+                    <th class="table-top-row">
+                        Denarii
+                    </th>
+                    <th class="table-top-row">
+                        Sestertii
+                    </th>
+                    <th class="table-top-row">
+                        Folles
+                    </th>
+                    <th class="table-top-row">
+                        Nummi
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-data">
+                        Solidus
+                    </td>
+                    <td class="table-data">
+                        1
+                    </td>
+                    <td class="table-data">
+                        14
+                    </td>
+                    <td class="table-data">
+                        56
+                    </td>
+                    <td class="table-data">
+                        280
+                    </td>
+                    <td class="table-data">
+                        2520
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-data">
+                        Denarius
+                    </td>
+                    <td class="table-data">
+                        1/14
+                    </td>
+                    <td class="table-data">
+                        1
+                    </td>
+                    <td class="table-data">
+                        4
+                    </td>
+                    <td class="table-data">
+                        20
+                    </td>
+                    <td class="table-data">
+                        180
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-data">
+                        Sestertius
+                    </td>
+                    <td class="table-data">
+                        1/56
+                    </td>
+                    <td class="table-data">
+                        1/4
+                    </td>
+                    <td class="table-data">
+                        1
+                    </td>
+                    <td class="table-data">
+                        5
+                    </td>
+                    <td class="table-data">
+                        45
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-data">
+                        Follis
+                    </td>
+                    <td class="table-data">
+                        1/280
+                    </td>
+                    <td class="table-data">
+                        1/20
+                    </td>
+                    <td class="table-data">
+                        1/5
+                    </td>
+                    <td class="table-data">
+                        1
+                    </td>
+                    <td class="table-data">
+                        9
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-data">
+                        Nummus
+                    </td>
+                    <td class="table-data">
+                        1/2520
+                    </td>
+                    <td class="table-data">
+                        1/180
+                    </td>
+                    <td class="table-data">
+                        1/45
+                    </td>
+                    <td class="table-data">
+                        1/9
+                    </td>
+                    <td class="table-data">
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="grid">
+        <h3>Change vs Yesterday</h3>
+        <h1 id="PercentChange" />
+        <h3>Value Today at Chosen Currency</h3>
+        <h1 id="valueToday"></h1>
+    </div>
+    <div class="grid">
+        <div class="recent-grid">
+            <h3>Most Recent Block</h3>
+            <h4>Hash: <%= it.blockchain[it.blockchain.length - 1]["hash"].substring(0,21)%>...</h4>
+            <h4>Mined at: <%= it.blockchain[it.blockchain.length - 1]["time"] %></h4>
+        </div>
+        <div class="recent-grid">
+            <h3>Most Recent Transaction</h3>
+            <h4>Amount: <%= it.blockchain[it.blockchain.length - 1]["transactions"][it.blockchain[it.blockchain.length - 1]["transactions"].length -1]["amount"] %></h4>
+            <h4>Time: <%= it.blockchain[it.blockchain.length - 1]["transactions"][it.blockchain[it.blockchain.length - 1]["transactions"].length -1]["time"] %></h4>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascripts/index.js"></script>

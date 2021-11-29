@@ -41,25 +41,52 @@
     <Content Include="obj\Debug\DenariusBlockchainNode.njsproj.FileListAbsolute.txt" />
     <Content Include="package-lock.json" />
     <Content Include="public\favicon.ico" />
+    <Content Include="public\fonts\TrajanProRegular.ttf" />
     <Content Include="public\images\Denarius.bmp" />
+    <Content Include="public\javascripts\blockchain.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\stylesheets\blockchain.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\stylesheets\index.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\stylesheets\style.css" />
+    <Content Include="routes\blockchain.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\index.js" />
     <Content Include="routes\users.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="views\error.ejs" />
-    <Content Include="views\index.ejs" />
+    <Content Include="views\block.eta">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\error.eta" />
+    <Content Include="views\index.eta" />
+    <Content Include="views\blockchain.eta">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\templates\main.template.eta">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="obj\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="public\" />
+    <Folder Include="public\fonts\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
+    <Folder Include="views\templates\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

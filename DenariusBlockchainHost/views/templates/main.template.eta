@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<head>
+    <title>Solidus - <%= it.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="/select2/css/select2.min.css" />
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/select2/js/select2.full.min.js"></script>
+    <script src="/he/he.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 
-  </head>
-  <body>
+<body>
     <div id="sidebar" class="sidebar">
         <a id="openbtn" href="javascript:void(0)" style="transition: none;" class="openbtn" onclick="openNav()">
             <i class="fas fa-bars"></i>
@@ -15,7 +20,7 @@
         <a id="closebtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">
             <i class="fas fa-times"></i>
         </a>
-        <a id="home" class="active" href="/">
+        <a id="home" href="/">
             <i class="fas fa-home"></i>
         </a>
         <a id="blockchain" href="blockchain">
@@ -34,25 +39,24 @@
         </div>
     </div>
 
-    <div id="content" class="content">
+    <div id="main" class="content">
         <div style="width:100%; max-height:5%; padding-bottom:1vh;">
-            <img src="/images/Denarius.png" alt="Denarius Logo" style="max-width:6rem;min-width:min(4rem, 10vw);vertical-align:middle"/>
-            <h1 style="display: inline-block;vertical-align:middle;font-family:Trajan;font-weight:3000;font-size:min(4rem, 10vw)">Denarius</h1>
+            <img src="/images/solidus.png" alt="Solidus Logo" class="logo" />
+            <h1 class="title">Solidus</h1>
         </div>
-        <!-- <p><%= blockchain %></p> -->
+        <%~ it.body %>
     </div>
-
     <script>
         window.addEventListener('resize', onResize);
 
-        function onResize(){
-            window.location.reload(); 
+        function onResize() {
+            //window.location.reload();
         }
-            
+
         function openNav() {
-            if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
+            if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400) {
                 document.getElementById("sidebar").style.width = "12em";
-                document.getElementById("content").style.marginLeft = "12em";
+                document.getElementById("main").style.marginLeft = "12em";
                 document.getElementById("closebtn").style.visibility = "visible";
                 document.getElementById("openbtn").style.visibility = "hidden";
                 document.getElementById("openbtn").style.padding = "0";
@@ -66,7 +70,7 @@
                 document.getElementById("closebtn").style.paddingBottom = "2em";
             } else {
                 document.getElementById("sidebar").style.height = "100%";
-                document.getElementById("content").style.marginTop = "0";
+                document.getElementById("main").style.marginTop = "0";
                 document.getElementById("openbtn").className = "invisiblebtn";
                 document.getElementById("closebtn").className = "closebtn, visiblebtn";
                 document.getElementById("home").className = "visiblebtn";
@@ -83,9 +87,9 @@
         }
 
         function closeNav() {
-            if ( Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400){
+            if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 400) {
                 document.getElementById("sidebar").style.width = "3em";
-                document.getElementById("content").style.marginLeft= "3em";
+                document.getElementById("main").style.marginLeft = "3em";
                 document.getElementById("closebtn").style.visibility = "hidden";
                 document.getElementById("closebtn").style.padding = "0";
                 document.getElementById("closebtn").style.height = "0";
@@ -102,7 +106,7 @@
                 document.getElementById("openbtn").style.paddingBottom = "2em";
             } else {
                 document.getElementById("sidebar").style.height = "2.5%";
-                document.getElementById("content").style.marginTop = "5%";
+                document.getElementById("main").style.marginTop = "5%";
                 document.getElementById("openbtn").className = "openbtn";
                 document.getElementById("closebtn").className = "invisiblebtn, closebtn";
                 document.getElementById("home").className = "invisiblebtn";
@@ -112,8 +116,10 @@
                 document.getElementById("settings").className = "invisiblebtn";
             }
 
-
         }
+        document.getElementById("<% ~it.active %>").className += "active";
     </script>
-  </body>
+</body>
+
+
 </html>

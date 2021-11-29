@@ -22,15 +22,11 @@ function GET(req, res, next) {
     sock.on('message', function incoming(message) {
         Blockchain = message;
         var BLOCKCHAINJSON = JSON.parse(Blockchain);
-        res.render('index', { title: 'Home', blockchain: BLOCKCHAINJSON, active: 'home' });
+        res.render('blockchain', { title: 'Blockchain', blockchain: BLOCKCHAINJSON, active: "blockchain" });
     });
 }
 
 /* GET home page. */
 router.get('/', GET);
-
-router.get('/index', GET);
-
-router.get('/home', GET);
 
 module.exports = router;
